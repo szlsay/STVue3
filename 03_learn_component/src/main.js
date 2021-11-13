@@ -1,4 +1,4 @@
 import { createApp } from 'vue'
-import App from './02_组件的css作用域/App'
+import App from './03_父组件传递子组件/App'
 
 createApp(App).mount('#app')
