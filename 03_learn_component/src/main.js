@@ -1,4 +1,4 @@
 import { createApp } from 'vue'
-import App from './04_子组件传递父组件/App'
+import App from './05_商品页面的切换/App'
 
 createApp(App).mount('#app')
