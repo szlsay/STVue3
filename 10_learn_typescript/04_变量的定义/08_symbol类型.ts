@@ -6,4 +6,5 @@ const info = {
   [title2]: "老师"
 }
 
+console.log(info)
 export {}
