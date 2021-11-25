@@ -18,7 +18,7 @@ type Request = {
 const options = {
   url: "https://www.baidu.org/abc",
   method: "POST"
-} 
+} as const
 
 request(options.url, options.method)
 
