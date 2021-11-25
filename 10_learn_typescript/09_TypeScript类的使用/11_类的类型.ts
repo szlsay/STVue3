@@ -17,7 +17,7 @@ const p1: Person = {
 function printPerson(p: Person) {
   console.log(p.name)
 }
-
+printPerson(p1)
 printPerson(new Person())
 printPerson({name: "kobe", eating: function() {}})
 

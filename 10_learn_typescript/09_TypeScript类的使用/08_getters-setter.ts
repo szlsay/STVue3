@@ -18,3 +18,4 @@ class Person {
 const p = new Person("why")
 p.name = "coderwhy"
 console.log(p.name)
+export{}
