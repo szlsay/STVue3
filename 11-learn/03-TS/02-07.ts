@@ -92,6 +92,19 @@ let a = [];
 push(a, 1, 2, 3, '4');
 console.log(a) //[ 1, 2, 3, '4' ]
 
+// function reverse(x: number | string): number | string | void {    
+//   if (typeof x === 'number') {        
+//     return Number(x.toString().split('').reverse().join(''));    
+//   } else if (typeof x === 'string') {        
+//     return x.split('').reverse().join('');    
+//   }
+// }
+
+// console.log(reverse(12345678)); //87654321
+// console.log(reverse('asdf'))  // fdsa
+
+function reverse(x: number): number;
+function reverse(x: string): string;
 function reverse(x: number | string): number | string | void {    
   if (typeof x === 'number') {        
     return Number(x.toString().split('').reverse().join(''));    
