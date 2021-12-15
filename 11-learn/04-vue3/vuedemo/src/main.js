@@ -1,3 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-createApp(App).mount("#app")
+const app = createApp(App)
+app.mixin({
+  mounted(){
+    console.log(this.$el, 'dom ready');
+  }
+})
+app.mount("#app")
