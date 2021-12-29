@@ -1,32 +1,36 @@
 import {createRouter, createWebHashHistory} from 'vue-router'
 const routes = [{
-  path: '/',
-  redirect: { name: 'cart' } 
-},
-  {
-    name: 'user',
-    path: '/user',
-    component: ()=>import("./views/user"),
-    meta: {
-      title: '会员中心'
-    }
+  path: '/:path(.*)+',
+  component: ()=>import("./views/Layout.vue"),
+  meta: {
+    title: '首页'
   },
-  {
-    name: 'goods',
-    path: '/goods',
-    component: ()=>import("./views/goods"),
-    meta: {
-      title: '商品详情'
+  children: [
+    {
+      path: '/',
+      component: ()=>import("./views/cart"),
+      meta: {
+        title: '购物车'
+      }
+    },
+    {
+      name: 'user',
+      path: '/user',
+      component: ()=>import("./views/user"),
+      meta: {
+        title: '会员中心'
+      }
+    },
+    {
+      name: 'goods',
+      path: '/goods',
+      component: ()=>import("./views/goods"),
+      meta: {
+        title: '商品'
+      }
     }
-  },
-  {
-    name: 'cart',
-    path: '/cart',
-    component: ()=>import("./views/cart"),
-    meta: {
-      title: '购物车'
-    }
-  }
+  ]
+} 
 ]
 
 const router = createRouter({

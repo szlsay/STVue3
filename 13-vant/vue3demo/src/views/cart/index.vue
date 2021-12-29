@@ -132,4 +132,8 @@ export default {
     }
   }
 }
+
+.van-submit-bar {
+  margin-bottom: 49px;
+}
 </style>
