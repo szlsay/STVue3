@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@types/node': ^17.0.5
   '@vitejs/plugin-vue': ^2.0.0
   axios: ^0.24.0
   dayjs: ^1.10.7
@@ -26,6 +27,7 @@ dependencies:
   vue-router: registry.npmmirror.com/vue-router/4.0.12_vue@3.2.26
 
 devDependencies:
+  '@types/node': registry.npmmirror.com/@types/node/17.0.5
   '@vitejs/plugin-vue': registry.npmmirror.com/@vitejs/plugin-vue/2.0.1_vite@2.7.10+vue@3.2.26
   less: registry.npmmirror.com/less/4.1.2
   postcss: registry.npmmirror.com/postcss/8.4.5
@@ -421,6 +423,12 @@ packages:
     dependencies:
       estree-walker: registry.npmmirror.com/estree-walker/2.0.2
       picomatch: 2.3.0
+    dev: true
+
+  registry.npmmirror.com/@types/node/17.0.5:
+    resolution: {integrity: sha512-w3mrvNXLeDYV1GKTZorGJQivK6XLCoGwpnyJFbJVK/aTBQUxOCaa/GlFAAN3OTDFcb7h5tiFG+YXCO2By+riZw==, registry: https://registry.nlark.com/, tarball: https://registry.npmmirror.com/@types/node/download/@types/node-17.0.5.tgz}
+    name: '@types/node'
+    version: 17.0.5
     dev: true
 
   registry.npmmirror.com/@vant/icons/1.7.3:

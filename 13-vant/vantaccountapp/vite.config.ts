@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite'
+import { defineConfig, resolveConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import styleImport from 'vite-plugin-style-import';
-
+import { resolve } from "path"
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -14,5 +14,8 @@ export default defineConfig({
           resolveStyle: (name) => `vant/es/${name}/style/index`,
         },
       ],
-    }),]
+    })],
+    resolve: {
+      alias: [{find: "@", replacement: resolve(__dirname, 'src')}]
+    }
 })
