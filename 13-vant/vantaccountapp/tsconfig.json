@@ -10,6 +10,8 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
+    "types": ["vite/client"], // 增加对 vite 环境变量类型等支持，https://cn.vitejs.dev/guide/features.html#client-types
+    "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
     }

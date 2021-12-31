@@ -1,4 +1,4 @@
-import { defineConfig, resolveConfig } from "vite";
+import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import styleImport from "vite-plugin-style-import";
 import { resolve } from "path";
@@ -29,5 +29,17 @@ export default defineConfig({
     },
     port: 3888,
     open: true,
+  },
+  // 配置 less
+  css: {
+    modules: {
+      localsConvention: "dashesOnly",
+    },
+    preprocessorOptions: {
+      less: {
+        // 支持内联 JavaScript
+        javascriptEnabled: true,
+      },
+    },
   },
 });
