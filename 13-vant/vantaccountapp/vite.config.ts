@@ -1,7 +1,7 @@
-import { defineConfig, resolveConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import styleImport from 'vite-plugin-style-import';
-import { resolve } from "path"
+import { defineConfig, resolveConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import styleImport from "vite-plugin-style-import";
+import { resolve } from "path";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -9,13 +9,25 @@ export default defineConfig({
     styleImport({
       libs: [
         {
-          libraryName: 'vant',
+          libraryName: "vant",
           esModule: true,
           resolveStyle: (name) => `vant/es/${name}/style/index`,
         },
       ],
-    })],
-    resolve: {
-      alias: [{find: "@", replacement: resolve(__dirname, 'src')}]
-    }
-})
+    }),
+  ],
+  resolve: {
+    alias: [{ find: "@", replacement: resolve(__dirname, "src") }],
+  },
+  server: {
+    proxy: {
+      "/api": {
+        target: "http://ab.svip52.com/api",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
+    port: 3888,
+    open: true,
+  },
+});
