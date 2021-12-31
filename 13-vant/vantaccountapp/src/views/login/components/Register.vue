@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { LoginAndRegParams } from "@/api/user";
+import { LoginAndRegParams, register } from "@/api/user";
 import tools from "@/utils/tools";
 import { Toast } from "vant";
 import { ref, reactive } from "vue";
@@ -26,7 +26,7 @@ const showLeftIcon = reactive<{
   password: LeftIconType.CIRCLE,
 });
 
-const onSubmit = (values: LoginAndRegParams) => {
+const onSubmit = async (values: LoginAndRegParams) => {
   console.log("submit", values);
   if (!values.username.trim()) {
     Toast.fail("请输入用户名");
@@ -36,7 +36,23 @@ const onSubmit = (values: LoginAndRegParams) => {
     Toast.fail("请输入密码");
     return;
   }
-  emit("toLogin", username.value);
+
+  try {
+    btnLoading.value = true;
+    const {message, code} = await register(values);
+    if(code == 200){
+      Toast.success({message, duration: 700})
+      setTimeout(() => {
+        emit("toLogin", username.value);
+        username.value = '';
+        password.value = ''
+      }, 700);
+    }
+  } catch (error) {
+    console.log("error:", error);
+  } finally {
+    btnLoading.value = false;
+  }
 };
 
 const changeLeftIcon = (

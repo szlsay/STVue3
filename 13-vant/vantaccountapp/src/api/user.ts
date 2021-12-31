@@ -12,3 +12,11 @@ export function login(params: LoginAndRegParams) {
     data: params,
   });
 }
+
+export function register(params: LoginAndRegParams) {
+  return request({
+    url: "/user/register",
+    method: "post",
+    data: params,
+  });
+}
