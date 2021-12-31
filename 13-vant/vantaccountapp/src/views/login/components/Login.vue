@@ -1,8 +1,13 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import { onMounted, onUpdated, watch } from "vue";
 import { login, LoginAndRegParams } from "@/api/user";
 import { Toast } from "vant";
 import tools from '@/utils/tools'
+export interface API {
+  username: string;
+}
+
 const username = ref("");
 const password = ref("");
 const btnloading = ref(false)
@@ -25,13 +30,23 @@ const onSubmit = async (values: LoginAndRegParams) => {
   } finally {
     btnloading.value = false
   }
-  
 };
+
+defineExpose({
+  username
+})
+
+watch(username, (newV, oldV)=> {
+  console.log("username newV:", newV)
+  console.log("username oldV:", oldV)
+}, {
+  immediate:true
+})
 </script>
 
 <template>
   <div>
-    <van-form @submit="onSubmit">
+    <van-form @submit="onSubmit"  label-width="50px" :readonly="btnloading" validate-trigger="onSubmit">
       <van-cell-group inset>
         <van-field
           v-model="username"
