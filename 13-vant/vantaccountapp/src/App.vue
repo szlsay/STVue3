@@ -7,5 +7,15 @@
   </div>
 </template>
 
-<style>
+<style lang="less" scoped>
+.app{
+  min-height: 100vh;
+  // .clearfix:after {
+  //   content: ".";
+  //   display: block;
+  //   height: 0;
+  //   clear: both;
+  //   visibility: hidden;
+  // }
+}
 </style>
