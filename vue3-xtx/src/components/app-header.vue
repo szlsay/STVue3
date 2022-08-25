@@ -8,12 +8,15 @@
         <i class="iconfont icon-search"></i>
         <input type="text" placeholder="搜一搜" />
       </div>
+      <!-- 使用头部购物车组件 -->
+      <AppHeaderCart />
     </div>
   </header>
 </template>
 
 <script setup>
 import AppHeaderNav from './app-header-nav.vue'
+import AppHeaderCart from './app-header-cart.vue'
 </script>
 
 <style lang="less" scoped>
@@ -39,6 +42,10 @@ import AppHeaderNav from './app-header-nav.vue'
     position: relative;
     border-bottom: 1px solid #e7e7e7;
     line-height: 32px;
+    .icon-search {
+      font-size: 18px;
+      margin-left: 5px;
+    }
     input {
       width: 140px;
       padding-left: 5px;
