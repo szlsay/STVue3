@@ -1,3 +1,6 @@
+<!--
+ * @LastEditTime: 2022-08-25 22:47:24
+-->
 <template>
 <ul class="app-header-nav">
   <li><router-link to="/">首页</router-link></li>
