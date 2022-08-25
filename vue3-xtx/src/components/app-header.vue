@@ -1,32 +1,48 @@
 <template>
-<header class="app-header">
-  <div class="container">
-    <h1 class="logo"><router-link to="/">小兔鲜</router-link></h1>
-    <AppHeaderNav></AppHeaderNav>
-  </div>
-</header>
+  <header class="app-header">
+    <div class="container">
+      <h1 class="logo"><router-link to="/">小兔鲜</router-link></h1>
+      <!-- 使用头部导航组件 -->
+      <AppHeaderNav />
+      <div class="search">
+        <i class="iconfont icon-search"></i>
+        <input type="text" placeholder="搜一搜" />
+      </div>
+    </div>
+  </header>
 </template>
 
 <script setup>
 import AppHeaderNav from './app-header-nav.vue'
-
 </script>
 
 <style lang="less" scoped>
-.app-header{
+.app-header {
   background-color: #fff;
-  .container{
+  .container {
     display: flex;
     align-items: center;
   }
-  .logo{
+  .logo {
     width: 200px;
-    a{
+    a {
       display: block;
       height: 132px;
       width: 100%;
       text-indent: -9999px;
       background: url(../assets/images/logo.png) no-repeat center 18px / contain;
+    }
+  }
+  .search {
+    width: 170px;
+    height: 32px;
+    position: relative;
+    border-bottom: 1px solid #e7e7e7;
+    line-height: 32px;
+    input {
+      width: 140px;
+      padding-left: 5px;
+      color: #666;
     }
   }
 }
