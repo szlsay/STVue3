@@ -8,11 +8,14 @@
       <HomeBanner />
     </div>
   </div>
+  <!-- 新鲜好物 -->
+  <HomeNew />
 </template>
 
 <script setup>
 import HomeCategory from './components/home-category'
 import HomeBanner from './components/home-banner'
+import HomeNew from './components/home-new'
 </script>
 
 <style lang="less" scoped>
